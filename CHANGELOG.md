@@ -18,6 +18,7 @@
    - Interconnect
    - Logical downlink
    - Logical enclosure
+   - Logical interconnect
    - Logical interconnect Group
    - Logical switch
    - Logical switch group
