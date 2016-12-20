@@ -35,6 +35,7 @@
    - Storage systems
    - Switches
    - Unmanaged Device
+   - Uplink Set
    - Volume
    - Volume template
  2. New features added:
