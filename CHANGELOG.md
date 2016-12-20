@@ -34,6 +34,7 @@
    - Storage pools
    - Storage systems
    - Switches
+   - Unmanaged Device
    - Volume
    - Volume template
  2. New features added:
