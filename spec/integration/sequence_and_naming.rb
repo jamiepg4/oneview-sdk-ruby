@@ -43,7 +43,7 @@ DEPENDENCIES = {
   SASLogicalInterconnectGroup: [],
   ServerHardware: [:ServerHardwareType],
   ServerHardwareType: [:Enclosure],
-  ServerProfile: [:ServerHardware, :Enclosure, :ServerProfileTemplate],
+  ServerProfile: [:ServerHardware, :Enclosure, :ServerProfileTemplate, :StoragePool],
   ServerProfileTemplate: [:EnclosureGroup, :ServerHardware, :Volume],
   StoragePool: [:StorageSystem],
   StorageSystem: [:FCNetwork],

@@ -58,7 +58,7 @@ RSpec.describe klass, integration: true, type: CREATE, sequence: seq(klass) do
         }
       }
 
-      storage_pool = OneviewSDK::API300::C7000::StoragePool.new($client_300, name: STORAGE_POOL_NAME)
+      storage_pool = OneviewSDK::API300::C7000::StoragePool.new($client_300, name: STORAGE_POOL_NAME, storageSystemUri: storage_system['uri'])
       item.create_volume_with_attachment(storage_pool, volume_params)
       item['sanStorage']['manageSanStorage'] = true
       item['sanStorage']['hostOSType'] = 'Windows 2012 / WS2012 R2'
