@@ -7,7 +7,7 @@ RSpec.describe klass, integration: true, type: UPDATE do
   before :all do
     @item = klass.new($client_300, name: SERVER_PROFILE_NAME)
     @item.retrieve!
-    @enclosure_group = OneviewSDK::API300::C7000::EnclosureGroup.find_by($client_300, name: ENC_GROUP_NAME).first
+    @enclosure_group = OneviewSDK::API300::C7000::EnclosureGroup.find_by($client_300, name: ENC_GROUP2_NAME).first
     @server_hardware_type = OneviewSDK::API300::C7000::ServerHardwareType.find_by($client_300, {}).first
     @storage_system = OneviewSDK::API300::C7000::StorageSystem.find_by($client_300, {}).first
     @item3 = klass.new($client_300, name: SERVER_PROFILE2_NAME)

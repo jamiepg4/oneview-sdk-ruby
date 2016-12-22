@@ -36,7 +36,7 @@ RSpec.describe klass, integration: true, type: CREATE, sequence: seq(klass) do
       server_hardware_type = OneviewSDK::API300::C7000::ServerHardwareType.find_by($client_300, {}).first
       item.set_server_hardware_type(server_hardware_type)
 
-      enclosure_group = OneviewSDK::API300::C7000::EnclosureGroup.new($client_300, name: ENC_GROUP_NAME)
+      enclosure_group = OneviewSDK::API300::C7000::EnclosureGroup.new($client_300, name: ENC_GROUP2_NAME)
       item.set_enclosure_group(enclosure_group)
 
       expect(enclosure_group['uri']).to be
