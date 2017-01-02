@@ -1,0 +1,13 @@
+{
+  "data": {
+    "nativeNetworkUri": null,
+    "reachability": "Reachable",
+    "manualLoginRedistributionState": "NotSupported",
+    "connectionMode": "Auto",
+    "lacpTimer": "Short",
+    "networkType": "Ethernet",
+    "ethernetNetworkType": "Tagged",
+    "description": null,
+    "name": "EthernetUplinkSet_2" // UPLINK_SET4_NAME on sequence_and_naming.rb file
+  }
+}
