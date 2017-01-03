@@ -4,22 +4,24 @@ klass = OneviewSDK::API300::C7000::Interconnect
 RSpec.describe klass, integration: true, type: UPDATE do
   include_context 'integration api300 context'
 
-  let(:interconnect) { klass.find_by($client_300, name: 'Encl1, interconnect 1').first }
-
   describe '#update' do
     it 'self raises MethodUnavailable' do
-      expect { interconnect.update }.to raise_error(/The method #update is unavailable for this resource/)
+      instance = klass.new $client_300
+      expect { instance.update }.to raise_error(/The method #update is unavailable for this resource/)
     end
   end
 
   describe '#resetportprotection' do
     it 'triggers a reset of port protection' do
+      sleep 15
+      interconnect = klass.find_by($client_300, name: INTERCONNECT_2_NAME).first
       expect { interconnect.reset_port_protection }.not_to raise_error
     end
   end
 
   describe '#update_port' do
     it 'updates with valid attributes' do
+      interconnect = klass.find_by($client_300, name: INTERCONNECT_2_NAME).first
       ports = interconnect['ports'].select { |k| k['portType'] == 'Uplink' }
       port = ports.first
       expect { interconnect.update_port(port['name'], enabled: false) }.not_to raise_error
@@ -36,6 +38,7 @@ RSpec.describe klass, integration: true, type: UPDATE do
     end
 
     it 'fails to update with invalid attributes' do
+      interconnect = klass.find_by($client_300, name: INTERCONNECT_2_NAME).first
       port = interconnect[:ports].first
       expect { interconnect.update_port(port['name'], none: 'none') }.to raise_error(/BAD REQUEST/)
     end
